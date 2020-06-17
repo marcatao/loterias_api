@@ -1,4 +1,4 @@
-<h1>#Test Dev Backend Eduzz</h1>
+<h1>#API Loterias</h1>
 
 <p>Esta api surgiu da necessidade de colher de forma mais estruturada os dados dos sorteios da loteria. Estamos em uma versao de testes ainda aberto a todos utilização gratuita e ilimitada.</p>
 
@@ -40,8 +40,9 @@
 <h5>With authentication</h5>
 <p>This application uses <b>firebase/php-jwt</b> to authentication on header from request with param "Authotization".</p>
 <ul>
-<li> Method: <b>post  '/account/deposit'</b> controller: 'EndPointController@deposit</li>
+<li> Method: <b>post  '/lotofacil/concurso'</b> controller: LotofacilControllerController@index</li>
+<li> Method: <b>post  '/lotofacil/concurso/{concurso_numero}'</b> controller: LotofacilControllerController@index</li>
 </ul>
 
 <hr>
-<p>Developed by Thiago Bianchini Marcato</p>
+<p>Developed by Thiago Marcato</p>
