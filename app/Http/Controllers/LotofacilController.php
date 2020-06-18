@@ -23,7 +23,8 @@ class LotofacilController extends BaseController
             'Accept'        => 'application/json',
         ];
         $response = $client->request('POST', env('PATH_API').'/lotofacil/concurso'.$sorteio, ['headers' => $headers]);
-        $response->getHeaderLine('content-type');
+        if($response->getStatusCode() == 204 ) return response()->json(['message' => 'Token nao informado ou invalido'],401);
+        //$response->getHeaderLine('content-type');
         return  $response->getBody(); 
 
     }

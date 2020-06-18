@@ -21,13 +21,13 @@ class Autenticador
              try {
                   $dadosAutenticacao = JWT::decode($token, env('JWT_KEY'), ['HS256']);      
              } catch (\Exception $e) {
-                  return response()->json(['Error' => ['message' => 'Invalid token' ]],400);
+                   return response()->json(['message' => 'Seu token é invalido'],204);
              }
 
         $user =  User::where('email', $dadosAutenticacao->email)->first();
         if(is_null($user)){
             throw new \Illuminate\Database\Eloquent\ModelNotFoundException();
-        }
+        } 
         return $next($request);
 
      } catch(\Illuminate\Database\Eloquent\ModelNotFoundException $e){
